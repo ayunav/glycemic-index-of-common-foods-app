@@ -21,7 +21,7 @@ This is a suggestion for how to organize your data.
 3. Populate your first `UITableViewController` based on the data that you set up.
 4. Make sure that navigating between `UITableViewController`s is working. You'll need to pass relevant information to the second `UITableViewController` in `prepareForSegue:`
 5. Set up the selection interaction in the second `UITableViewController`. You'll need to implement on of the `UITableViewDelegate` methods. The checkmark is `cell.accessoryType`, so it's built in.
-6. When selection is made on a cell, update the corrosponding objects `selection` property.
+6. When selection is made on a cell, update the corresponding objects `selection` property.
 7. Make sure that the cells in the first `UITableViewController` are displaying the `selection` property.
 
 :) :) :) 
