@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		29591D301B79725400C53165 /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29591D2F1B79725400C53165 /* MainTableViewController.m */; };
+		29591D331B7972A200C53165 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29591D321B7972A200C53165 /* DetailTableViewController.m */; };
+		29591D361B7972F800C53165 /* CQCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 29591D351B7972F800C53165 /* CQCategory.m */; };
 		8DECE7921B78082B0064D760 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DECE7911B78082B0064D760 /* main.m */; };
 		8DECE7951B78082B0064D760 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DECE7941B78082B0064D760 /* AppDelegate.m */; };
-		8DECE7981B78082B0064D760 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DECE7971B78082B0064D760 /* ViewController.m */; };
 		8DECE79B1B78082B0064D760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DECE7991B78082B0064D760 /* Main.storyboard */; };
 		8DECE79D1B78082B0064D760 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DECE79C1B78082B0064D760 /* Images.xcassets */; };
 		8DECE7A01B78082B0064D760 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DECE79E1B78082B0064D760 /* LaunchScreen.xib */; };
@@ -27,13 +29,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29591D2E1B79725400C53165 /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		29591D2F1B79725400C53165 /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		29591D311B7972A200C53165 /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
+		29591D321B7972A200C53165 /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
+		29591D341B7972F800C53165 /* CQCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQCategory.h; sourceTree = "<group>"; };
+		29591D351B7972F800C53165 /* CQCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQCategory.m; sourceTree = "<group>"; };
 		8DECE78C1B78082B0064D760 /* OptionSelector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OptionSelector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DECE7901B78082B0064D760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DECE7911B78082B0064D760 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8DECE7931B78082B0064D760 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8DECE7941B78082B0064D760 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8DECE7961B78082B0064D760 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8DECE7971B78082B0064D760 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8DECE79A1B78082B0064D760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DECE79C1B78082B0064D760 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8DECE79F1B78082B0064D760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -83,8 +89,12 @@
 			children = (
 				8DECE7931B78082B0064D760 /* AppDelegate.h */,
 				8DECE7941B78082B0064D760 /* AppDelegate.m */,
-				8DECE7961B78082B0064D760 /* ViewController.h */,
-				8DECE7971B78082B0064D760 /* ViewController.m */,
+				29591D341B7972F800C53165 /* CQCategory.h */,
+				29591D351B7972F800C53165 /* CQCategory.m */,
+				29591D2E1B79725400C53165 /* MainTableViewController.h */,
+				29591D2F1B79725400C53165 /* MainTableViewController.m */,
+				29591D311B7972A200C53165 /* DetailTableViewController.h */,
+				29591D321B7972A200C53165 /* DetailTableViewController.m */,
 				8DECE7991B78082B0064D760 /* Main.storyboard */,
 				8DECE79C1B78082B0064D760 /* Images.xcassets */,
 				8DECE79E1B78082B0064D760 /* LaunchScreen.xib */,
@@ -219,9 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DECE7981B78082B0064D760 /* ViewController.m in Sources */,
+				29591D331B7972A200C53165 /* DetailTableViewController.m in Sources */,
 				8DECE7951B78082B0064D760 /* AppDelegate.m in Sources */,
+				29591D361B7972F800C53165 /* CQCategory.m in Sources */,
 				8DECE7921B78082B0064D760 /* main.m in Sources */,
+				29591D301B79725400C53165 /* MainTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +430,7 @@
 				8DECE7B11B78082B0064D760 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8DECE7B21B78082B0064D760 /* Build configuration list for PBXNativeTarget "OptionSelectorTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +439,7 @@
 				8DECE7B41B78082B0064D760 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
