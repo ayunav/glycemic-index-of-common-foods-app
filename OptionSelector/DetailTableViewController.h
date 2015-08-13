@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CQCategory.h"
+
+//forward declarations. Is better than #import class here. I don't know why.
+@class CQCategory;
+@class MainTableViewController;
 
 @interface DetailTableViewController : UITableViewController
 
-@property (nonatomic) CQCategory *category; 
-@property (nonatomic) NSString *selection;
+@property (nonatomic) CQCategory *category;
+@property (nonatomic,weak) MainTableViewController *delegate; 
 
 @end

@@ -18,8 +18,8 @@
 
 -(void)initializeCategories {
     CQCategory *category1 = [[CQCategory alloc]init];
-    category1.name = @"Low GI";
-    category1.options = @[@"apple", @"avocado", @"chicken"];
+    category1.name = @"Low GI Foods";
+    category1.options = @[@"All Meats", @"Eggs", @"Peanut Butter", @"Nuts", @"Yogurt", @"Oranges", @"Tomato Juice", @"Couscous"];
     
     CQCategory *category2 = [[CQCategory alloc]init];
     category2.name = @"Moderate GI";
@@ -28,8 +28,8 @@
     CQCategory *category3 = [[CQCategory alloc]init];
     category3.name = @"High GI";
     category3.options = @[@"candy", @"chips", @"white rice"];
-    self.categories = [NSArray arrayWithObjects:category1, category2, category3, nil];
     
+    self.categories = @[category1, category2, category3];
 }
 
 - (void)viewDidLoad {
@@ -37,12 +37,6 @@
 
     self.navigationItem.title = @"Glycemic Index of Common Foods";
     [self initializeCategories];
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -52,50 +46,39 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"number of categories: %lu", (unsigned long)self.categories.count);
+    //NSLog(@"number of categories: %lu", (unsigned long)self.categories.count);
     return self.categories.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CategoryCellIdentifier" forIndexPath:indexPath];
-    NSLog(@"check2");
+
     CQCategory *categoryToDisplay = [self.categories objectAtIndex:indexPath.row];
     cell.textLabel.text = categoryToDisplay.name;
     
+    //if we don't have the method below, the selection shows in the detail of the cell of the main table vc with delay. Setting up it in else method to an empty string solves the issue with the delay
+    if (categoryToDisplay.selection != nil) {
+        cell.detailTextLabel.text = categoryToDisplay.selection;
+    } else {
+        cell.detailTextLabel.text = @" ";
+    }
+
     return cell;
 }
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    // 1 figure out how to access the data you want for the detailTableViewController using indexpath
-//    // 2 pass that data into sender
-//    [self performSegueWithIdentifier: @"mainToDetail" sender:@"hello!"];
-//    
-//}
-//
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
     DetailTableViewController *controller = segue.destinationViewController;
-
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
     //pass the object with its name and an array to the next view controller
     CQCategory *category = [self.categories objectAtIndex:indexPath.row];
     controller.category = category; //the next vc has an object class 
-
     
-    
-//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//    NSArray *keysForTypes = [self.pokemonTypes allKeys];
-//    NSString *keyAtARowInASection = keysForTypes[indexPath.section];
-//    NSString *littlePoke = [self.pokemonTypes[keyAtARowInASection] objectAtIndex:indexPath.row];
-//    
-//    PKPokemonDetailViewController *vc = segue.destinationViewController;
-//    vc.pokemonName = littlePoke;
-//    NSString *imageName = [littlePoke lowercaseString];
-//    vc.pokemonImageName = imageName;
-    
+    //delegate declaration has to happen in the prepare for segue method for main table vc. Main table vc is the delegate of the Detail vc. 
+    controller.delegate = self;
 }
-
 
 @end
