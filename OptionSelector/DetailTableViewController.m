@@ -18,12 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
-//do we need this?
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    NSLog(@"%@", self.category);
+    self.navigationItem.title = @"🍅🍉Check to Track🍕🍔";
 }
 
 #pragma mark - Table view data source
