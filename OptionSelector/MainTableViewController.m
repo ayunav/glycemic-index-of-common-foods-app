@@ -19,15 +19,15 @@
 -(void)initializeCategories {
     CQCategory *category1 = [[CQCategory alloc]init];
     category1.name = @"Low GI Foods";
-    category1.options = @[@"All Meats", @"Eggs", @"Peanut Butter", @"Nuts", @"Yogurt", @"Oranges", @"Tomato Juice", @"Couscous"];
+    category1.options = @[@"All Meats", @"Eggs", @"Peanut Butter", @"Nuts", @"Yogurt", @"Oranges", @"Tomato Juice", @"Couscous", @"Hummus", @"Lentils", @"Barley", @"Popcorn", @"Avocado", @"Grapefruit"];
     
     CQCategory *category2 = [[CQCategory alloc]init];
-    category2.name = @"Moderate GI";
-    category2.options = @[@"grapes", @"banana", @"quinoa"];
+    category2.name = @"Moderate GI Foods";
+    category2.options = @[@"Low Fat Yogurt", @"Pizza", @"Bananas", @"Old Fashioned Oatmeal", @"Corn Tortillas", @"Grapes", @"Quinoa", @"Milk", @"Brown Rice", @"Sweet Potato", @"Whole Grain/Wheat Bread", @"Soy/Almond/Rice Milk"];
     
     CQCategory *category3 = [[CQCategory alloc]init];
-    category3.name = @"High GI";
-    category3.options = @[@"candy", @"chips", @"white rice"];
+    category3.name = @"High GI Foods";
+    category3.options = @[@"Potato Chips", @"Candy Bars", @"White Rice", @"White Bread", @"Bagel", @"Cake", @"Muffin", @"Soda", @"Instant Oatmeal", @"Mac & Cheese", @"Baked/Mashed Potatoes", @"Pancakes/Waffles", @"Raisins/Dates", @"Most Juices", @"Sweetened Cereals"];
     
     self.categories = @[category1, category2, category3];
 }
