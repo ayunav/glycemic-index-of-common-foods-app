@@ -23,7 +23,7 @@
     NSArray *meats = @[@"Pork", @"Beef", @"Veal", @"Lamb", @"Mutton", @"Goat", @"Chicken", @"Turkey", @"Duck", @"Goose", @"Rabbit", @"Wild Boar"];
     
     category1.options = @[
-                          @{@"All meats" : meats},
+                          @{@"All Meats" : meats},
                           @"Eggs",
                           @"Peanut Butter",
                           @"Nuts",

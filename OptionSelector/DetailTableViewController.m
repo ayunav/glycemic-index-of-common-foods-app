@@ -28,7 +28,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.category == nil) {
+    if (self.options != nil) {
         return self.options.count;
     }
     return self.category.options.count;
@@ -40,7 +40,7 @@
     
     // object will either be an NSString or NSDictionary
     id object;
-    if (self.category == nil) {
+    if (self.options != nil) {
         object = [self.options objectAtIndex:indexPath.row];
     } else {
         object = [self.category.options objectAtIndex:indexPath.row];
@@ -52,6 +52,12 @@
         NSString *key = [[dictionary allKeys] firstObject];
         cell.textLabel.text = key;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        if ([cell.textLabel.text isEqualToString:]) {
+//            cell.accessoryType = UITableViewCellAccessoryNone;
+//            if ([cell.textLabel.text isEqualToString:self.category.selection]) {
+//                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//            }
+//        }
     } else {
         // treat it like a string
         cell.textLabel.text = (NSString *)object;
@@ -69,7 +75,7 @@
     
     // object will either be NSString or NSDictionary
     id object;
-    if (self.category == nil) {
+    if (self.options != nil) {
         object = [self.options objectAtIndex:indexPath.row];
     } else {
         object = [self.category.options objectAtIndex:indexPath.row];
@@ -87,6 +93,7 @@
         DetailTableViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"DetailController"];
         
         controller.options = options;
+        controller.category = self.category;
         
         // set any properties on viewController
         // tell the UINavigationController to push the new view controller on to the stack
@@ -94,14 +101,16 @@
 
         NSString *option = [options objectAtIndex:indexPath.row];
         self.category.selection = option;
+        
         [self.delegate.tableView reloadData];
         [self.tableView reloadData];
-
-
-        
     } else {
         // treat it like a string
-        self.category.selection = [self.category.options objectAtIndex:indexPath.row];
+        if (self.options != nil ){
+            self.category.selection = [self.options objectAtIndex:indexPath.row];
+        } else {
+            self.category.selection = [self.category.options objectAtIndex:indexPath.row];
+        }
         //because Main table vc is the delegate of the Detail vc, it call call the method on Main table vc to reload its data from inside this (didSelectRowAtIndexPath) method
         [self.delegate.tableView reloadData];
         [self.tableView reloadData];
