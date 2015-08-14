@@ -15,6 +15,7 @@
 @interface DetailTableViewController : UITableViewController
 
 @property (nonatomic) CQCategory *category;
+@property (nonatomic) NSArray *options;
 @property (nonatomic,weak) MainTableViewController *delegate; 
 
 @end

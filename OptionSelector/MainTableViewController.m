@@ -19,7 +19,24 @@
 -(void)initializeCategories {
     CQCategory *category1 = [[CQCategory alloc]init];
     category1.name = @"Low GI Foods";
-    category1.options = @[@"All Meats", @"Eggs", @"Peanut Butter", @"Nuts", @"Yogurt", @"Oranges", @"Tomato Juice", @"Couscous", @"Hummus", @"Lentils", @"Barley", @"Popcorn", @"Avocado", @"Grapefruit"];
+    
+    NSArray *meats = @[@"Pork", @"Beef", @"Veal", @"Lamb", @"Mutton", @"Goat", @"Chicken", @"Turkey", @"Duck", @"Goose", @"Rabbit", @"Wild Boar"];
+    
+    category1.options = @[
+                          @{@"All meats" : meats},
+                          @"Eggs",
+                          @"Peanut Butter",
+                          @"Nuts",
+                          @"Yogurt",
+                          @"Oranges",
+                          @"Tomato Juice",
+                          @"Couscous",
+                          @"Hummus",
+                          @"Lentils",
+                          @"Barley",
+                          @"Popcorn",
+                          @"Avocado",
+                          @"Grapefruit"];
     
     CQCategory *category2 = [[CQCategory alloc]init];
     category2.name = @"Moderate GI Foods";
@@ -46,10 +63,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //NSLog(@"number of categories: %lu", (unsigned long)self.categories.count);
     return self.categories.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
