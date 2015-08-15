@@ -1,14 +1,14 @@
 //
 //  DetailTableViewController.h
-//  OptionSelector
+//  Glycemic Index of Common Foods OptionSelector App
 //
 //  Created by Ayuna Vogel on 8/10/15.
-//  Copyright (c) 2015 Mike Kavouras. All rights reserved.
+//  Copyright (c) 2015 Ayuna Vogel. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-//forward declarations. Is better than #import class here. I don't know why.
+//According to Cameron, it's better to use forward declarations instead of #import here. I don't know why. Note to myself: research forward declarations
 @class CQCategory;
 @class MainTableViewController;
 

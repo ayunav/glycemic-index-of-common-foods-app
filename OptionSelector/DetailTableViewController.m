@@ -1,9 +1,9 @@
 //
 //  DetailTableViewController.m
-//  OptionSelector
+//  Glycemic Index of Common Foods OptionSelector App
 //
 //  Created by Ayuna Vogel on 8/10/15.
-//  Copyright (c) 2015 Mike Kavouras. All rights reserved.
+//  Copyright (c) 2015 Ayuna Vogel. All rights reserved.
 //
 
 #import "DetailTableViewController.h"
@@ -28,6 +28,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    //the method belows deals with having a NSArray *options that is a property of class CQCategory and is an array that contains a NSDictionary and NSStrings
     if (self.options != nil) {
         return self.options.count;
     }
@@ -38,7 +39,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ItemCellIdentifier" forIndexPath:indexPath];
     
-    // object will either be an NSString or NSDictionary
+    // object will either be an NSString or a NSDictionary
     id object;
     if (self.options != nil) {
         object = [self.options objectAtIndex:indexPath.row];
@@ -48,11 +49,37 @@
     
     if ([object isKindOfClass:[NSDictionary class]]) {
         // treat it like a dictionary
+        //works
         NSDictionary *dictionary = object;
         NSString *key = [[dictionary allKeys] firstObject];
         cell.textLabel.text = key;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//        if ([cell.textLabel.text isEqualToString:]) {
+     
+        //experiments
+//        NSDictionary *dictionary = object;
+//        NSArray *keys = [dictionary allKeys];
+//        NSString *key = [keys objectAtIndex:indexPath.row];
+//        NSString *firstObject = [[dictionary allKeys] firstObject];
+//
+//        if ([cell.textLabel.text isEqualToString:firstObject]) {
+//            cell.textLabel.text = firstObject;
+//            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        }
+//        if ([cell.textLabel.text isEqualToString:key]) {
+//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//        }
+
+
+        
+//        NSArray *keys = [dictionary allKeys];
+//        NSString *aKey = [keys objectAtIndex:indexPath.row];
+//        if ([cell.textLabel.text isEqualToString:aKey]) {
+//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//        }
+//        
+        
+        //doens't work
+//        if ([cell.textLabel.text isEqualToString: ? ]) {
 //            cell.accessoryType = UITableViewCellAccessoryNone;
 //            if ([cell.textLabel.text isEqualToString:self.category.selection]) {
 //                cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -66,7 +93,6 @@
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }
     }
-    
     return cell;
 }
 
@@ -87,15 +113,13 @@
         NSString *key = [[dictionary allKeys] firstObject];
         NSArray *options = [dictionary objectForKey:key];
         
+        //methods to push new stack when string All Meats is tapped in the Detail table vc
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        
         // create a new instance of UIViewController from our storyboard
         DetailTableViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"DetailController"];
-        
+        // set any properties on viewController
         controller.options = options;
         controller.category = self.category;
-        
-        // set any properties on viewController
         // tell the UINavigationController to push the new view controller on to the stack
         [self.navigationController pushViewController:controller animated:YES];
 
@@ -111,7 +135,7 @@
         } else {
             self.category.selection = [self.category.options objectAtIndex:indexPath.row];
         }
-        //because Main table vc is the delegate of the Detail vc, it call call the method on Main table vc to reload its data from inside this (didSelectRowAtIndexPath) method
+        //because Main table vc is the delegate of the Detail vc, it can call the method on the Main table vc to reload its data from inside this (didSelectRowAtIndexPath) method
         [self.delegate.tableView reloadData];
         [self.tableView reloadData];
     }

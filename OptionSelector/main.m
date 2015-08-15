@@ -1,9 +1,9 @@
 //
 //  main.m
-//  OptionSelector
+//  Glycemic Index of Common Foods OptionSelector App
 //
-//  Created by Michael Kavouras on 8/9/15.
-//  Copyright (c) 2015 Mike Kavouras. All rights reserved.
+//  Created by Ayuna Vogel on 8/10/15.
+//  Copyright (c) 2015 Ayuna Vogel. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -1,9 +1,9 @@
 //
 //  MainTableViewController.m
-//  OptionSelector
+//  Glycemic Index of Common Foods OptionSelector App
 //
 //  Created by Ayuna Vogel on 8/10/15.
-//  Copyright (c) 2015 Mike Kavouras. All rights reserved.
+//  Copyright (c) 2015 Ayuna Vogel. All rights reserved.
 //
 
 #import "MainTableViewController.h"
@@ -14,6 +14,7 @@
 
 @end
 
+//  Glycemic Index of Common Foods OptionSelector App
 @implementation MainTableViewController
 
 -(void)initializeCategories {
@@ -23,7 +24,7 @@
     NSArray *meats = @[@"Pork", @"Beef", @"Veal", @"Lamb", @"Mutton", @"Goat", @"Chicken", @"Turkey", @"Duck", @"Goose", @"Rabbit", @"Wild Boar"];
     
     category1.options = @[
-                          @{@"All Meats" : meats},
+                          @{@"All Meats" : meats}, //NSDictionary for the NSArray above
                           @"Eggs",
                           @"Peanut Butter",
                           @"Nuts",
@@ -73,7 +74,7 @@
     CQCategory *categoryToDisplay = [self.categories objectAtIndex:indexPath.row];
     cell.textLabel.text = categoryToDisplay.name;
     
-    //if we don't have the method below, the selection shows in the detail of the cell of the main table vc with delay. Setting up it in else method to an empty string solves the issue with the delay
+    //Without the below method, the NSString *selection displays in the detail text label in the main table vc with delay. Setting up else method to an empty string solves the delayed display issue
     if (categoryToDisplay.selection != nil) {
         cell.detailTextLabel.text = categoryToDisplay.selection;
     } else {
@@ -88,7 +89,7 @@
     DetailTableViewController *controller = segue.destinationViewController;
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
-    //pass the object with its name and an array to the next view controller
+    //pass the CQCategory object with all its properties to the next view controller
     CQCategory *category = [self.categories objectAtIndex:indexPath.row];
     controller.category = category; //the next vc has an object class 
     
