@@ -49,42 +49,10 @@
     
     if ([object isKindOfClass:[NSDictionary class]]) {
         // treat it like a dictionary
-        //works
         NSDictionary *dictionary = object;
         NSString *key = [[dictionary allKeys] firstObject];
         cell.textLabel.text = key;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-     
-        //experiments
-//        NSDictionary *dictionary = object;
-//        NSArray *keys = [dictionary allKeys];
-//        NSString *key = [keys objectAtIndex:indexPath.row];
-//        NSString *firstObject = [[dictionary allKeys] firstObject];
-//
-//        if ([cell.textLabel.text isEqualToString:firstObject]) {
-//            cell.textLabel.text = firstObject;
-//            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//        }
-//        if ([cell.textLabel.text isEqualToString:key]) {
-//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//        }
-
-
-        
-//        NSArray *keys = [dictionary allKeys];
-//        NSString *aKey = [keys objectAtIndex:indexPath.row];
-//        if ([cell.textLabel.text isEqualToString:aKey]) {
-//            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//        }
-//        
-        
-        //doens't work
-//        if ([cell.textLabel.text isEqualToString: ? ]) {
-//            cell.accessoryType = UITableViewCellAccessoryNone;
-//            if ([cell.textLabel.text isEqualToString:self.category.selection]) {
-//                cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//            }
-//        }
     } else {
         // treat it like a string
         cell.textLabel.text = (NSString *)object;
@@ -122,9 +90,6 @@
         controller.category = self.category;
         // tell the UINavigationController to push the new view controller on to the stack
         [self.navigationController pushViewController:controller animated:YES];
-
-        NSString *option = [options objectAtIndex:indexPath.row];
-        self.category.selection = option;
         
         [self.delegate.tableView reloadData];
         [self.tableView reloadData];
